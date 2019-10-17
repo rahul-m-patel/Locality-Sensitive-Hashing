@@ -1,0 +1,15 @@
+The goal of this project is to implement an information retrieval system using Python and NLTK.
+
+To build this system, it is provided a plain text file that contains many documents related to music lyrics.
+Each document contains a Document ID which is used to make the posting list in the inverted index and the different terms in the documents are stemmed using porters2 algorithm.
+
+Methods used to build the vectors:
+
+(0) Standard Boolean Boolean
+
+(1) TF weights
+
+(2) TF-IDF weights
+
+Instead of calculating the cosine angle between the querry and the vectors we have used the method of KL Divergence.
+  
