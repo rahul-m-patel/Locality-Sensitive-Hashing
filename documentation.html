@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module documentation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>documentation</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:d%3A%5Clocality-sensitive-hashing%5Cdocumentation.py">d:\locality-sensitive-hashing\documentation.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-LSH"><strong>LSH</strong></a>(bands, rows, threshold, signature_matrix)</dt><dd><tt>implements&nbsp;Locality&nbsp;Sensitive&nbsp;Hashing<br>
+&nbsp;<br>
+:param&nbsp;bands:&nbsp;number&nbsp;of&nbsp;bands<br>
+&nbsp;<br>
+:param&nbsp;rows:&nbsp;&nbsp;number&nbsp;of&nbsp;rows&nbsp;in&nbsp;each&nbsp;band<br>
+&nbsp;<br>
+:param&nbsp;threshold:&nbsp;minimum&nbsp;similarity&nbsp;between&nbsp;two&nbsp;documents<br>
+&nbsp;<br>
+:param&nbsp;signature_matrix:&nbsp;input&nbsp;signature&nbsp;matrix<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;candidates&nbsp;(dictionary&nbsp;containing&nbsp;pairs&nbsp;of&nbsp;probable&nbsp;similar&nbsp;documents&nbsp;mapped&nbsp;to&nbsp;their&nbsp;similarity&nbsp;scores)&nbsp;and&nbsp;similar_documents&nbsp;(pairs&nbsp;of&nbsp;documents&nbsp;with&nbsp;similarity&nbsp;scores&nbsp;greater&nbsp;than&nbsp;threshold)</tt></dd></dl>
+ <dl><dt><a name="-cosine_distance"><strong>cosine_distance</strong></a>(x, y)</dt><dd><tt>Calculate&nbsp;cosine&nbsp;distance&nbsp;between&nbsp;x&nbsp;and&nbsp;y<br>
+&nbsp;<br>
+:param&nbsp;x:&nbsp;First&nbsp;vector<br>
+&nbsp;<br>
+:param&nbsp;y:&nbsp;Second&nbsp;vector<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;cosine&nbsp;distance&nbsp;between&nbsp;x&nbsp;and&nbsp;y</tt></dd></dl>
+ <dl><dt><a name="-euclidean_distance"><strong>euclidean_distance</strong></a>(x, y, r=2.0)</dt><dd><tt>Calculate&nbsp;euclidean&nbsp;distance&nbsp;between&nbsp;x&nbsp;and&nbsp;y<br>
+&nbsp;<br>
+:param&nbsp;x:&nbsp;First&nbsp;vector<br>
+&nbsp;<br>
+:param&nbsp;y:&nbsp;Second&nbsp;vector<br>
+&nbsp;<br>
+:param&nbsp;r:&nbsp;Defined&nbsp;as&nbsp;2&nbsp;for&nbsp;square&nbsp;root<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;euclidean&nbsp;distance&nbsp;between&nbsp;x&nbsp;and&nbsp;y</tt></dd></dl>
+ <dl><dt><a name="-get_hash_functions"><strong>get_hash_functions</strong></a>(size, max)</dt><dd><tt>returns&nbsp;a&nbsp;list&nbsp;of&nbsp;pairs&nbsp;&nbsp;(a&nbsp;,b)&nbsp;which&nbsp;are&nbsp;random&nbsp;integers&nbsp;for&nbsp;the&nbsp;hash&nbsp;function&nbsp;(ax+b)%c<br>
+&nbsp;<br>
+:param&nbsp;size:&nbsp;Size&nbsp;of&nbsp;the&nbsp;list&nbsp;(corresponds&nbsp;to&nbsp;number&nbsp;of&nbsp;hash&nbsp;functions&nbsp;needed)<br>
+&nbsp;<br>
+:param&nbsp;max:&nbsp;maximum&nbsp;range&nbsp;of&nbsp;random&nbsp;integer&nbsp;generated<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;pairs&nbsp;&nbsp;(a&nbsp;,b)&nbsp;which&nbsp;are&nbsp;random&nbsp;integers&nbsp;for&nbsp;the&nbsp;hash&nbsp;function&nbsp;(ax+b)%c</tt></dd></dl>
+ <dl><dt><a name="-initialize_array_bucket"><strong>initialize_array_bucket</strong></a>(bands)</dt><dd><tt>initializes&nbsp;buckets&nbsp;for&nbsp;each&nbsp;band<br>
+&nbsp;<br>
+:param&nbsp;bands:&nbsp;total&nbsp;number&nbsp;of&nbsp;bands<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;a&nbsp;list&nbsp;of&nbsp;list&nbsp;of&nbsp;buckets&nbsp;corresponding&nbsp;to&nbsp;each&nbsp;band</tt></dd></dl>
+ <dl><dt><a name="-isPrime"><strong>isPrime</strong></a>(num)</dt><dd><tt>Find&nbsp;whether&nbsp;a&nbsp;&nbsp;number&nbsp;is&nbsp;prime&nbsp;or&nbsp;not<br>
+&nbsp;<br>
+:param&nbsp;num:&nbsp;Input&nbsp;number<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;true&nbsp;if&nbsp;the&nbsp;number&nbsp;is&nbsp;prime,&nbsp;false&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-make_matrix"><strong>make_matrix</strong></a>(shingles, numColumns)</dt><dd><tt>generates&nbsp;a&nbsp;matrix&nbsp;containing&nbsp;information&nbsp;about&nbsp;the&nbsp;presence&nbsp;of&nbsp;shingles&nbsp;in&nbsp;the&nbsp;documents<br>
+&nbsp;<br>
+:param&nbsp;shingles:&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;k-shingle&nbsp;to&nbsp;its&nbsp;posting&nbsp;list<br>
+&nbsp;<br>
+:param&nbsp;numColumns:&nbsp;number&nbsp;of&nbsp;columns&nbsp;required&nbsp;in&nbsp;the&nbsp;matrix&nbsp;(&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;number&nbsp;of&nbsp;documents)<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;a&nbsp;matrix&nbsp;containing&nbsp;1&nbsp;in&nbsp;its&nbsp;i,j&nbsp;cell&nbsp;if&nbsp;shingle&nbsp;i&nbsp;is&nbsp;present&nbsp;in&nbsp;document&nbsp;j,&nbsp;0&nbsp;otherwise.</tt></dd></dl>
+ <dl><dt><a name="-make_shingles"><strong>make_shingles</strong></a>(doc, shingles, k, docid)</dt><dd><tt>generates&nbsp;k-shingles&nbsp;for&nbsp;the&nbsp;input&nbsp;document<br>
+&nbsp;<br>
+:param&nbsp;doc:&nbsp;input&nbsp;document<br>
+&nbsp;<br>
+:param&nbsp;shingles:&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;k-shingle&nbsp;to&nbsp;its&nbsp;posting&nbsp;list<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;size&nbsp;of&nbsp;shingles<br>
+&nbsp;<br>
+:param&nbsp;docid:&nbsp;index&nbsp;of&nbsp;input&nbsp;document&nbsp;<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;a&nbsp;(modified)&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;k-shingle&nbsp;to&nbsp;its&nbsp;posting&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-make_signature_matrix"><strong>make_signature_matrix</strong></a>(matrix, size, shingles, numOfDocs, index_matrix)</dt><dd><tt>generates&nbsp;signature&nbsp;matrix&nbsp;<br>
+&nbsp;<br>
+:param&nbsp;matrix:&nbsp;the&nbsp;boolean&nbsp;matrix&nbsp;containing&nbsp;information&nbsp;about&nbsp;the&nbsp;presence&nbsp;of&nbsp;shingles&nbsp;in&nbsp;the&nbsp;documents<br>
+&nbsp;<br>
+:param&nbsp;size:&nbsp;Number&nbsp;of&nbsp;hash&nbsp;functions&nbsp;(number&nbsp;of&nbsp;rows&nbsp;in&nbsp;signature&nbsp;matrix)<br>
+&nbsp;<br>
+:param&nbsp;shingles:&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;k-shingle&nbsp;to&nbsp;its&nbsp;posting&nbsp;list<br>
+&nbsp;<br>
+:param&nbsp;numOfDocs:&nbsp;number&nbsp;of&nbsp;columns&nbsp;required&nbsp;in&nbsp;the&nbsp;matrix&nbsp;(&nbsp;is&nbsp;equal&nbsp;to&nbsp;the&nbsp;number&nbsp;of&nbsp;documents)<br>
+&nbsp;<br>
+:param&nbsp;index_matrix:&nbsp;a&nbsp;dictionary&nbsp;mapping&nbsp;each&nbsp;shingle&nbsp;to&nbsp;a&nbsp;unique&nbsp;index<br>
+&nbsp;<br>
+:return:&nbsp;returns&nbsp;signature&nbsp;matrix</tt></dd></dl>
+</td></tr></table>
+</body></html>
